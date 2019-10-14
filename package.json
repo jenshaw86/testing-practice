@@ -4,7 +4,8 @@
   "description": "Practicing writing Javascript tests for Odin Project",
   "main": "practice.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "jest --watch *.js"
   },
   "repository": {
     "type": "git",
