@@ -1,0 +1,1 @@
+const practice = require('./practice')
