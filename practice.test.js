@@ -31,11 +31,27 @@ it('divides two numbers and returns the quotient', () => {
 })
 // Caesar Cipher. Read about it on this website
 
-it('shifts characters by 3 letters', () => {
-  expect(practice.caeserCipher(3, 'zebra')).toBe('bgdtc');
+it('shifts lowercase string', () => {
+  expect(practice.caeserCipher(3, 'zebra')).toBe('cheud');
 })
-// Don’t forget to test wrapping from z to a.
-// Don’t forget to test keeping the same case.
-// Don’t forget to test punctuation!
-// For this one, you may want to split the final function into a few smaller functions. One concept of Testing is that you don’t need to explicitly test every function you write… Just the public ones. So in this case you only need tests for the final caesar() function. If it works as expected you can rest assured that your smaller helper functions are doing what they’re supposed to.
+
+it('shifts uppercase string', () => {
+  expect(practice.caeserCipher(5, 'PIZZA')).toBe('UNEEF');
+})
+
+it('shifts lower and uppercase characters respectively', () => {
+  expect(practice.caeserCipher(1, 'SuperCaliFrageListicExpiAliDocious')).toBe('TvqfsDbmjGsbhfMjtujdFyqjBmjEpdjpvt');
+})
+
+it('ignores punctuation', () => {
+  expect(practice.caeserCipher(8, 'Seattle, WA')).toBe('Amibbtm, EI');
+})
+
 // Array Analysis. Write a function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
+it('returns an object', () => {
+  expect(practice.arrayAnalysis([2,4,6,8,10])).toEqual({min: 2, max: 10, average: 6, length: 5})
+})
+
+it('rounds floats', () => {
+  expect(practice.arrayAnalysis([1, 2, 4, 5, 3, 11, 123, 0])).toEqual({min: 0, max: 123, average: 19, length: 8})
+})
